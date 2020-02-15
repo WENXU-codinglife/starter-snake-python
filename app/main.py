@@ -45,8 +45,8 @@ def start():
     """
     print(json.dumps(data))
 
-    color = "FB00FF"
-    headType = "safe"
+    color = "#FB00FF",
+    headType = "safe",
     tailType = "sharp"
 
     return start_response(color)
