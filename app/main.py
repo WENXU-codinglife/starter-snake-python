@@ -61,8 +61,10 @@ def move():
             snake AI must choose a direction to move in.
     """
     print(json.dumps(data))
-    size = json.dumps(data)['you']['board']['height']
-    print(size)
+    height = json.dumps(data)['board']['height']
+    width = json.dumps(data)['board']['width']
+    print(height)
+    print(width)
     #directions = ['up', 'down', 'left', 'right']
     #direction = random.choice(directions)
     direction = 'up'
