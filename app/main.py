@@ -75,12 +75,14 @@ def move():
     if first['x'] == second['x']:
     	if first['y'] > second['y']:
     		# downward
+    		direction = 'down'
     		if first['y'] == height - 1:
     			direction = 'right'
     			if first['x'] == width - 1:
     				direction = 'left'
     	else:
     		#upward
+    		direction = 'up'
     		if first['y'] == 0:
     			direction = 'left'
     			if first['x'] == 0:
@@ -88,12 +90,14 @@ def move():
     elif first['y'] == second['y']:
     	if first['x'] > second['x']:
     		#rightward
+    		direction = 'right'
     		if first['x'] == width - 1:
     			direction = 'up'
     			if first['y'] == 0:
     				direction = 'down'    		
     	else:
     		#leftward
+    		direction = 'left'
     		if first['x'] == 0:
     			direction = 'down'
     			if first['y'] == height - 1:
