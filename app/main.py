@@ -46,8 +46,8 @@ def start():
     print(json.dumps(data))
 
     color = "#00fcef",
-    headType = "safe",
-    tailType = "sharp"
+    headType = "smile",
+    tailType = "freckled"
 
     return {'color':color,'headType':headType,'tailType':tailType}
 
