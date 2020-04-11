@@ -45,7 +45,7 @@ def start():
     """
     print(json.dumps(data))
 
-    color = "#fb00ff",
+    color = "#00fcef",
     headType = "safe",
     tailType = "sharp"
 
