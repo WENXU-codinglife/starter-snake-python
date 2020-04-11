@@ -75,9 +75,9 @@ def move():
     if first['x'] == second['x']:
     	if first['y'] > second['y']:
     		# downward
-    		if first['y'] == size - 1:
+    		if first['y'] == height - 1:
     			direction = 'right'
-    			if first['x'] == size - 1:
+    			if first['x'] == width - 1:
     				direction = 'left'
     	else:
     		#upward
@@ -88,7 +88,7 @@ def move():
     elif first['y'] == second['y']:
     	if first['x'] > second['x']:
     		#rightward
-    		if first['x'] == size - 1:
+    		if first['x'] == width - 1:
     			direction = 'up'
     			if first['y'] == 0:
     				direction = 'down'    		
@@ -96,7 +96,7 @@ def move():
     		#leftward
     		if first['x'] == 0:
     			direction = 'down'
-    			if first['y'] == size - 1:
+    			if first['y'] == height - 1:
     				direction = 'up'  
     return move_response(direction)
 
