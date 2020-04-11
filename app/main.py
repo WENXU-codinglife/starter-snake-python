@@ -62,11 +62,14 @@ def move():
     """
     print(json.dumps(data))
     size = json.dumps(data)['you']['board']['height']
+    print(size)
     #directions = ['up', 'down', 'left', 'right']
     #direction = random.choice(directions)
     direction = 'up'
     first = json.dumps(data)['you']['body'][0]
     second = json.dumps(data)['you']['body'][1]
+    print(first)
+    print(second)
     if first['x'] == second['x']:
     	if first['y'] > second['y']:
     		# downward
