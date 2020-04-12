@@ -2,7 +2,7 @@ import json
 import os
 import random
 import bottle
-
+import decision
 from api import ping_response, start_response, move_response, end_response
 
 
@@ -67,41 +67,8 @@ def move():
     print(width)
     #directions = ['up', 'down', 'left', 'right']
     #direction = random.choice(directions)
-    direction = 'up'
-    first = data['you']['body'][0]
-    second = data['you']['body'][1]
-    print(first)
-    print(second)
-    if first['x'] == second['x']:
-    	if first['y'] > second['y']:
-    		# downward
-    		direction = 'down'
-    		if first['y'] == height - 1:
-    			direction = 'right'
-    			if first['x'] == width - 1:
-    				direction = 'left'
-    	else:
-    		#upward
-    		direction = 'up'
-    		if first['y'] == 0:
-    			direction = 'left'
-    			if first['x'] == 0:
-    				direction = 'right'    		
-    elif first['y'] == second['y']:
-    	if first['x'] > second['x']:
-    		#rightward
-    		direction = 'right'
-    		if first['x'] == width - 1:
-    			direction = 'up'
-    			if first['y'] == 0:
-    				direction = 'down'    		
-    	else:
-    		#leftward
-    		direction = 'left'
-    		if first['x'] == 0:
-    			direction = 'down'
-    			if first['y'] == height - 1:
-    				direction = 'up'  
+    direction = dec(height,width,data)
+ 
     return move_response(direction)
 
 
