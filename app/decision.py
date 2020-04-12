@@ -56,7 +56,6 @@ def  layout(height,width,data):
 			snakes[row].append(0)
 			column+=1
 		row+=1
-	print(snakes)
 	food = []
 	row = 0
 	while(row < height+2):
@@ -64,8 +63,6 @@ def  layout(height,width,data):
 		while(column < width+2):
 			if(row == 0 or row == height+1 or column == 0 or column == width+1):
 				snakes[row][column] = 1
-				print(snakes)
-				print(str(row)+','+str(column))
 			column = column + 1
 		row = row + 1
 
