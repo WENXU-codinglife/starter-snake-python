@@ -75,10 +75,10 @@ def  layout(height,width,data):
 
 	for players in data['board']['snakes']:
 		print(players)
-		snakes[players['body'][0]['x']][players['body'][0]['y']] = 1
-		snakes[players['body'][0]['x']+2][players['body'][0]['y']+2] = 1
 		snakes[players['body'][0]['x']+1][players['body'][0]['y']] = 1
 		snakes[players['body'][0]['x']][players['body'][0]['y']+1] = 1
+		snakes[players['body'][0]['x']+1][players['body'][0]['y']+2] = 1
+		snakes[players['body'][0]['x']+2][players['body'][0]['y']+1] = 1
 		for component in players['body']:
 			snakes[component['x']+1][component['y']+1] = 1
 	ret = {"snakes":snakes, "food":food}
