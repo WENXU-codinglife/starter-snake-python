@@ -4,6 +4,7 @@ def dec(data):
     height = data['board']['height']
     width = data['board']['width']
     arena = layout(height,width,data)
+	print(arena)
     first = data['you']['body'][0]
     second = data['you']['body'][1]
     direction = 'up'
