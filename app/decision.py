@@ -70,8 +70,8 @@ def  layout(height,width,data):
 		row = row + 1
 
 
-	for piece in data['board']['food']:
-		food[piece['x']+1][piece['y']+1] = 1
+	#for piece in data['board']['food']:
+		#food[piece['x']+1][piece['y']+1] = 1
 
 	for component in data['you']['body']:
 		snakes[component['x']+1][component['y']+1] = 1
