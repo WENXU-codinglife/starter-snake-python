@@ -46,15 +46,26 @@ def dec(data):
 
 
 def  layout(height,width,data):
-	b = [0]*(width+2)
-	snakes = [b] * (height+2)
-	food = [b] * (height+2)
 	row = 0
 	column = 0
+	snakes = []
 	while(row < height+2):
+		snakes.append([])
+		column = 0
+		while(column < width+2):
+			snakes[row].append(0)
+			column+=1
+		row+=1
+	print(snakes)
+	food = []
+	row = 0
+	while(row < height+2):
+		column = 0
 		while(column < width+2):
 			if(row == 0 or row == height+1 or column == 0 or column == width+1):
 				snakes[row][column] = 1
+				print(snakes)
+				print(str(row)+','+str(column))
 			column = column + 1
 		row = row + 1
 
