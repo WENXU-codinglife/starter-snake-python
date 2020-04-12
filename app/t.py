@@ -1,4 +1,4 @@
-from decision import dec
+from decision import dec, layout
 
 data = {
     "turn": 5, 
@@ -42,4 +42,7 @@ data = {
         }
     }
 
+
 print(dec(data))
+
+print(layout(11,11,data))
