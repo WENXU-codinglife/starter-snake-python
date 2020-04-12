@@ -55,8 +55,8 @@ def  layout(height,width,data):
 		while(column < width+2):
 			if(row == 0 or row == height+1 or column == 0 or column == width+1):
 				snake[row][column] = 1
-			column++
-		row++
+			column = column + 1
+		row = row + 1
 
 
 	for piece in data['board']['food']:
