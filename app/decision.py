@@ -1,6 +1,6 @@
 
 
-def des(data):
+def dec(data):
     height = data['board']['height']
     width = data['board']['width']
     layout = layout(height,width,data)
