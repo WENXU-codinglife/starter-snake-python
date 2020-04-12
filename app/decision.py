@@ -3,43 +3,43 @@
 def dec(data):
     height = data['board']['height']
     width = data['board']['width']
-    layout = layout(height,width,data)
+    arena = layout(height,width,data)
     first = data['you']['body'][0]
     second = data['you']['body'][1]
     direction = 'up'
     if first['x'] == second['x']:
     	if first['y'] > second['y']:
     		# downward
-    		if layout['snake'][first['x']+1][first['y']+2] == 0:
+    		if arena['snake'][first['x']+1][first['y']+2] == 0:
     			direction = 'down'
-    		elif layout['snake'][first['x']][first['y']+1] == 0:
+    		elif arena['snake'][first['x']][first['y']+1] == 0:
     			direction = 'left'
-    		elif layout['snake'][first['x'+2]][first['y']+1] == 0:
+    		elif arena['snake'][first['x'+2]][first['y']+1] == 0:
     			direction = 'right'
     	else:
     		#upward
-    		if layout['snake'][first['x']+1][first['y']] == 0:
+    		if arena['snake'][first['x']+1][first['y']] == 0:
     			direction = 'up'
-    		elif layout['snake'][first['x']][first['y']+1] == 0:
+    		elif arena['snake'][first['x']][first['y']+1] == 0:
     			direction = 'left'
-    		elif layout['snake'][first['x'+2]][first['y']+1] == 0:
+    		elif arena['snake'][first['x'+2]][first['y']+1] == 0:
     			direction = 'right' 		
     elif first['y'] == second['y']:
     	if first['x'] > second['x']:
     		#rightward
-    		if layout['snake'][first['x']+2][first['y']+1] == 0:
+    		if arena['snake'][first['x']+2][first['y']+1] == 0:
     			direction = 'right'
-    		elif layout['snake'][first['x']+1][first['y']] == 0:
+    		elif arena['snake'][first['x']+1][first['y']] == 0:
     			direction = 'up'
-    		elif layout['snake'][first['x'+1]][first['y']+2] == 0:
+    		elif arena['snake'][first['x'+1]][first['y']+2] == 0:
     			direction = 'down'		
     	else:
     		#leftward
-    		if layout['snake'][first['x']][first['y']+1] == 0:
+    		if arena['snake'][first['x']][first['y']+1] == 0:
     			direction = 'left'
-    		elif layout['snake'][first['x']+1][first['y']] == 0:
+    		elif arena['snake'][first['x']+1][first['y']] == 0:
     			direction = 'up'
-    		elif layout['snake'][first['x'+1]][first['y']+2] == 0:
+    		elif arena['snake'][first['x'+1]][first['y']+2] == 0:
     			direction = 'down'	
     return direction
 
