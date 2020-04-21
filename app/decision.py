@@ -61,7 +61,7 @@ def dec(data):
 
 
             if arena['food'][first['y']][first['x']+1] == -1:
-                direction = 'down'
+                direction = 'up'
             elif arena['food'][first['y']+1][first['x']] == -1:
                 direction = 'left'
             elif arena['food'][first['y']+1][first['x']+2] == -1:
