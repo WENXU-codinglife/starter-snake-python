@@ -42,9 +42,7 @@ data = {
         }
     }
 
-
 print(dec(data))
 
 print(layout(11,11,data))
-
 

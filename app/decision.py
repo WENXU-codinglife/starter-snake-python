@@ -134,7 +134,7 @@ def  layout(height,width,data):
 #locate the foods with '-1'
 #"""
     for piece in data['board']['food']:
-        food[piece['x']+1][piece['y']+1] = -1
+        food[piece['y']+1][piece['x']+1] = -1
 
 #"""
 #locate my snake's body
