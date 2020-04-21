@@ -37,8 +37,8 @@ data = {
             {"x": 5, "y": 4}, 
             {"x": 5, "y": 5}, 
             {"x": 5, "y": 6}], 
-            "shout": "", 
-            "health": 95
+        "shout": "", 
+        "health": 95
         }
     }
 
@@ -46,3 +46,5 @@ data = {
 print(dec(data))
 
 print(layout(11,11,data))
+
+
