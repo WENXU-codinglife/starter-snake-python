@@ -157,6 +157,10 @@ def  layout(height,width,data):
         if snakes[players['body'][0]['y']+2][players['body'][0]['x']+1] == 0:
             snakes[players['body'][0]['y']+2][players['body'][0]['x']+1] = -1 * len(players['body'])
         snakes[players['body'][0]['y']+1][players['body'][0]['x']+1] = len(players['body'])
+        if len(players['body']) >= len(data['you']['body']):
+            delta_x = players['body'][0]['x'] - players['body'][1]['x']
+            delta_y = players['body'][0]['y'] - players['body'][1]['y']
+            snakes[players['body'][0]['y']+1+delta_y][players['body'][0]['x']+1+delta_x] = 1
         i = 1
         while(i<len(players['body'])):
             snakes[players['body'][i]['y']+1][players['body'][i]['x']+1] = 1
