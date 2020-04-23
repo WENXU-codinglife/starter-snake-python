@@ -5,7 +5,7 @@ def dec(data):
     width = data['board']['width']
     num = len(data['board']['snakes'])-1
     while(num>=0):
-        if data['board']['snakes'][num]["name"] == "drasnakegon":
+        if data['board']['snakes'][num]["name"] == "drasnakegon" or data['board']['snakes'][num]["name"] == "Demon Hunter":
             del data['board']['snakes'][num]
             break
         num-=1
