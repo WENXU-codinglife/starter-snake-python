@@ -149,13 +149,13 @@ def  layout(height,width,data):
 #"""
     for players in data['board']['snakes']:
         #print(players)
-        if snakes[players['body'][0]['y']+1][players['body'][0]['x']] == 0 or snakes[players['body'][0]['y']+1][players['body'][0]['x']] > -1 * len(players['body']:
+        if snakes[players['body'][0]['y']+1][players['body'][0]['x']] == 0 or snakes[players['body'][0]['y']+1][players['body'][0]['x']] > -1 * len(players['body']):
             snakes[players['body'][0]['y']+1][players['body'][0]['x']] = -1 * len(players['body'])
-        if snakes[players['body'][0]['y']][players['body'][0]['x']+1] == 0 or snakes[players['body'][0]['y']][players['body'][0]['x']+1] > -1 * len(players['body']:
+        if snakes[players['body'][0]['y']][players['body'][0]['x']+1] == 0 or snakes[players['body'][0]['y']][players['body'][0]['x']+1] > -1 * len(players['body']):
             snakes[players['body'][0]['y']][players['body'][0]['x']+1] = -1 * len(players['body'])
-        if snakes[players['body'][0]['y']+1][players['body'][0]['x']+2] == 0 or snakes[players['body'][0]['y']+1][players['body'][0]['x']+2] > -1 * len(players['body']:
+        if snakes[players['body'][0]['y']+1][players['body'][0]['x']+2] == 0 or snakes[players['body'][0]['y']+1][players['body'][0]['x']+2] > -1 * len(players['body']):
             snakes[players['body'][0]['y']+1][players['body'][0]['x']+2] = -1 * len(players['body'])
-        if snakes[players['body'][0]['y']+2][players['body'][0]['x']+1] == 0 or snakes[players['body'][0]['y']+2][players['body'][0]['x']+1] > -1 * len(players['body']:
+        if snakes[players['body'][0]['y']+2][players['body'][0]['x']+1] == 0 or snakes[players['body'][0]['y']+2][players['body'][0]['x']+1] > -1 * len(players['body']):
             snakes[players['body'][0]['y']+2][players['body'][0]['x']+1] = -1 * len(players['body'])
         snakes[players['body'][0]['y']+1][players['body'][0]['x']+1] = len(players['body'])
         if len(players['body']) >= len(data['you']['body']):
