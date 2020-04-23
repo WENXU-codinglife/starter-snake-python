@@ -44,13 +44,12 @@ def start():
             request's data if necessary.
     """
     print(json.dumps(data))
-
+    """
     color = "#00fcef",
     headType = "smile",
     tailType = "freckled"
-
-    return {'color':color,'headType':headType,'tailType':tailType}
-
+    """
+    return {"color": "#00fcef", "headType": "smile", "tailType": "freckled"}
 
 @bottle.post('/move')
 def move():
