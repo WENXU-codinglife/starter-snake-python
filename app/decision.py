@@ -21,10 +21,10 @@ def dec(data):
             if the surrounding entris are '0', follow the previous direction
             priority: low
             """
-            if arena['snakes'][first['y']+1][first['x']] <= 0:
-                direction = 'left'
-            elif arena['snakes'][first['y']+2][first['x']+1] <= 0:
+            if arena['snakes'][first['y']+2][first['x']+1] <= 0:
                 direction = 'down'
+            elif arena['snakes'][first['y']+1][first['x']] <= 0:
+                direction = 'left'
             elif arena['snakes'][first['y']+1][first['x']+2] <= 0:
                 direction = 'right'
                 
@@ -44,37 +44,37 @@ def dec(data):
             if a food exists in the adjacent entris, go to eat it
             priority: high
             """
-            if arena['food'][first['y']+1][first['x']+2] == -1:
+            if arena['food'][first['y']+1][first['x']+2] == -1 and arena['snakes'][first['y']+1][first['x']+2] != 1:
                 direction = 'right'
-            elif arena['food'][first['y']+2][first['x']+1] == -1:
+            elif arena['food'][first['y']+2][first['x']+1] == -1 and arena['snakes'][first['y']+2][first['x']+1] != 1:
                 direction = 'down'
-            elif arena['food'][first['y']+1][first['x']] == -1:
+            elif arena['food'][first['y']+1][first['x']] == -1 and arena['snakes'][first['y']+1][first['x']] != 1:
                 direction = 'left'
             
         else:
             #upward
-            if arena['snakes'][first['y']+1][first['x']] <= 0:
-                direction = 'left'
-            elif arena['snakes'][first['y']][first['x']+1] <= 0:
+            if arena['snakes'][first['y']][first['x']+1] <= 0:
                 direction = 'up'
+            elif arena['snakes'][first['y']+1][first['x']] <= 0:
+                direction = 'left'
             elif arena['snakes'][first['y']+1][first['x']+2] <= 0:
                 direction = 'right'
 
 
-            if arena['food'][first['y']][first['x']+1] == -1:
+            if arena['food'][first['y']][first['x']+1] == -1 and arena['snakes'][first['y']][first['x']+1] != 1:
                 direction = 'up'
-            elif arena['food'][first['y']+1][first['x']] == -1:
+            elif arena['food'][first['y']+1][first['x']] == -1 and arena['snakes'][first['y']+1][first['x']] != 1:
                 direction = 'left'
-            elif arena['food'][first['y']+1][first['x']+2] == -1:
+            elif arena['food'][first['y']+1][first['x']+2] == -1 and arena['snakes'][first['y']+1][first['x']+2] != 1:
                 direction = 'right'
     #horizontal             		
     elif first['y'] == second['y']:
         if first['x'] > second['x']:
             #rightward
-            if arena['snakes'][first['y']][first['x']+1] <= 0:
-                direction = 'up'
-            elif arena['snakes'][first['y']+1][first['x']+2] <= 0:
+            if arena['snakes'][first['y']+1][first['x']+2] <= 0:
                 direction = 'right'
+            elif arena['snakes'][first['y']][first['x']+1] <= 0:
+                direction = 'up'
             elif arena['snakes'][first['y']+2][first['x']+1] <= 0:
                 direction = 'down'	
 
@@ -86,13 +86,12 @@ def dec(data):
                 direction = 'down'	
         else:
             #leftward
+            if arena['snakes'][first['y']+1][first['x']] <= 0:
+                direction = 'left'
             if arena['snakes'][first['y']+2][first['x']+1] <= 0:
                 direction = 'down'
-            elif arena['snakes'][first['y']+1][first['x']] <= 0:
-                direction = 'left'
             elif arena['snakes'][first['y']][first['x']+1] <= 0:
                 direction = 'up'
-            	
 
             if arena['food'][first['y']+1][first['x']] and arena['snakes'][first['y']+1][first['x']] != 1:
                 direction = 'left'
