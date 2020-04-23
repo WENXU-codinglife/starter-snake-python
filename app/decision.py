@@ -93,9 +93,9 @@ def dec(data):
             elif arena['snakes'][first['y']][first['x']+1] <= 0:
                 direction = 'up'
 
-            if arena['food'][first['y']+1][first['x']] and arena['snakes'][first['y']+1][first['x']] != 1:
+            if arena['food'][first['y']+1][first['x']] == -1 and arena['snakes'][first['y']+1][first['x']] != 1:
                 direction = 'left'
-            elif arena['food'][first['y']][first['x']+1] and arena['snakes'][first['y']][first['x']+1] != 1:
+            elif arena['food'][first['y']][first['x']+1] == -1 and arena['snakes'][first['y']][first['x']+1] != 1:
                 direction = 'up'
             elif arena['food'][first['y']+2][first['x']+1] == -1 and arena['snakes'][first['y']+2][first['x']+1] != 1:
                 direction = 'down'	
