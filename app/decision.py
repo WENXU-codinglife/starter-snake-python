@@ -88,7 +88,7 @@ def dec(data):
             #leftward
             if arena['snakes'][first['y']+1][first['x']] <= 0:
                 direction = 'left'
-            if arena['snakes'][first['y']+2][first['x']+1] <= 0:
+            elif arena['snakes'][first['y']+2][first['x']+1] <= 0:
                 direction = 'down'
             elif arena['snakes'][first['y']][first['x']+1] <= 0:
                 direction = 'up'
