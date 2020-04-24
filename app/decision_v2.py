@@ -101,7 +101,7 @@ def dec_v2(data):
                 direction.append('down')	
     dic_dir = {'up':0,'down':0,'left':0,'right':0}
     zero_area_dir = {'up':0,'down':0,'left':0,'right':0}
-    ret = ''
+    ret = 'up'
     for way in direction:
         dic_dir[way] += 1
         if dic_dir[way] == 2:
