@@ -99,6 +99,7 @@ def dec_v2(data):
                 direction.append('up')
             elif arena['food'][first['y']+2][first['x']+1] == -1 and arena['snakes'][first['y']+2][first['x']+1] != 1 and arena['snakes'][first['y']+2][first['x']+1]*(-1)<len(data['you']['body']):
                 direction.append('down')	
+    print(direction)
     dic_dir = {'up':0,'down':0,'left':0,'right':0}
     zero_area_dir = {'up':0,'down':0,'left':0,'right':0}
     ret = 'up'
