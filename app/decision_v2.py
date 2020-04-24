@@ -207,9 +207,9 @@ def zero_area(start_x,start_y, arena_snakes):
     if(arena_snakes[start_y][start_x] > 0):
         return 0
     size = len(arena_snakes)
-    new_arena_snakes = [] * size
+    new_arena_snakes = [[None]] * size
     for x in range(0,size):
-        for y  in range (0,size):
+        for y in range(0,size):
             new_arena_snakes[x].append(arena_snakes[x][y])
     new_arena_snakes[start_y][start_x] = 1
     ret = 1
