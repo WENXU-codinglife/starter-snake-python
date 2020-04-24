@@ -63,7 +63,7 @@ def move():
     print(json.dumps(data))
     #directions = ['up', 'down', 'left', 'right']
     #direction = random.choice(directions)
-    direction = dec(data)
+    direction = dec_v2(data)
  
     return move_response(direction)
 

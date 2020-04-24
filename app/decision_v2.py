@@ -114,7 +114,7 @@ def dec_v2(data):
         zero_area_dir['left'] = zero_area(first[0]['x']-1,first[0]['y'],arena['snakes'])
     if dic_dir['right'] > 0:
         zero_area_dir['right'] = zero_area(first[0]['x']+1,first[0]['y'],arena['snakes'])
-    if(zero_area_dir[ret] < zero_area_dir['down']):
+    if(zero_area_dir[ret] < zero_area_dir['up']):
         ret = 'up'
     if(zero_area_dir[ret] < zero_area_dir['down']):
         ret = 'down'
@@ -202,6 +202,8 @@ connectivity of a pair of entris means that there must be at least a path betwee
 """
 
 def zero_area(start_x,start_y, arena_snakes):
+    if(arena_snakes[start_y][start_x] > 0):
+        return 0
     size = len(arena_snakes)
     arena_snakes[start_y][start_x] = 1
     ret = 1
