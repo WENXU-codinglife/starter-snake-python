@@ -205,18 +205,18 @@ connectivity of a pair of entris means that there must be at least a path betwee
 
 def zero_area(start_x,start_y, arena_snakes):
     new_arena_snakes  = arena_snakes.copy()
-    if(arena_snakes[start_y][start_x] > 0):
+    if(new_arena_snakes[start_y][start_x] > 0):
         return 0
-    size = len(arena_snakes)
-    arena_snakes[start_y][start_x] = 1
+    size = len(new_arena_snakes)
+    new_arena_snakes[start_y][start_x] = 1
     ret = 1
-    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and arena_snakes[start_y+1][start_x] <= 0):
-        ret = ret + zero_area(start_x,start_y+1,arena_snakes)
-    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and arena_snakes[start_y-1][start_x] <= 0):
-        ret = ret + zero_area(start_x,start_y-1,arena_snakes)
-    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and arena_snakes[start_y][start_x+1] <= 0):
-        ret = ret + zero_area(start_x+1,start_y,arena_snakes)
-    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and arena_snakes[start_y][start_x-1] <= 0):
-        ret = ret + zero_area(start_x-1,start_y,arena_snakes)   
+    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y+1][start_x] <= 0):
+        ret = ret + zero_area(start_x,start_y+1,new_arena_snakes)
+    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y-1][start_x] <= 0):
+        ret = ret + zero_area(start_x,start_y-1,new_arena_snakes)
+    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y][start_x+1] <= 0):
+        ret = ret + zero_area(start_x+1,start_y,new_arena_snakes)
+    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y][start_x-1] <= 0):
+        ret = ret + zero_area(start_x-1,start_y,new_arena_snakes)   
 
     return ret
