@@ -122,8 +122,8 @@ def dec_v2(data):
         ret = 'left'
     if(zero_area_dir[ret] < zero_area_dir['right']):
         ret = 'right'
-    #print(dic_dir)
-    #print(zero_area_dir)
+    print(dic_dir)
+    print(zero_area_dir)
     return ret
 
 
