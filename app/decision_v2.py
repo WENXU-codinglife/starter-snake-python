@@ -125,7 +125,7 @@ def dec_v2(data):
         ret = 'right'
     print(dic_dir)
     print(zero_area_dir)
-    return(ret)
+    print(ret)
     return ret
 
 
