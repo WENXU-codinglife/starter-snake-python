@@ -1,4 +1,4 @@
-
+import copy
 
 def dec_v2(data):
     height = data['board']['height']
