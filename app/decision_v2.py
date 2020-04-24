@@ -204,6 +204,7 @@ connectivity of a pair of entris means that there must be at least a path betwee
 """
 
 def zero_area(start_x,start_y, arena_snakes):
+    new_arena_snakes  = arena_snakes.copy()
     if(arena_snakes[start_y][start_x] > 0):
         return 0
     size = len(arena_snakes)
