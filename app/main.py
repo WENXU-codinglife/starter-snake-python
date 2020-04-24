@@ -3,6 +3,7 @@ import os
 import random
 import bottle
 from decision import dec
+from decision_v2 import dec_v2
 from api import ping_response, start_response, move_response, end_response
 
 
