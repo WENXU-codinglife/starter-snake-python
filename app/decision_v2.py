@@ -107,14 +107,24 @@ def dec_v2(data):
         dic_dir[way] += 1
         if dic_dir[ret] < dic_dir[way]:
             ret = way
+    new_arena_snakes_up = []
+    new_arena_snakes_down = []
+    new_arena_snakes_left = []
+    new_arena_snakes_right = []
+    for i in range(0,height):
+        new_arena_snakes_up.append(arena['snakes'][i])
+        new_arena_snakes_down.append(arena['snakes'][i])
+        new_arena_snakes_left.append(arena['snakes'][i])
+        new_arena_snakes_right.append(arena['snakes'][i])
+
     if dic_dir['up'] > 0:
-        zero_area_dir['up'] = zero_area(first['y'],first['x']+1,arena['snakes'])
+        zero_area_dir['up'] = zero_area(first['y'],first['x']+1,new_arena_snakes_up)
     if dic_dir['down'] > 0:
-        zero_area_dir['down'] = zero_area(first['y']+2,first['x']+1,arena['snakes'])
+        zero_area_dir['down'] = zero_area(first['y']+2,first['x']+1,new_arena_snakes_down)
     if dic_dir['left'] > 0:
-        zero_area_dir['left'] = zero_area(first['y']+1,first['x'],arena['snakes'])
+        zero_area_dir['left'] = zero_area(first['y']+1,first['x'],new_arena_snakes_left)
     if dic_dir['right'] > 0:
-        zero_area_dir['right'] = zero_area(first['y']+1,first['x']+2,arena['snakes'])
+        zero_area_dir['right'] = zero_area(first['y']+1,first['x']+2,new_arena_snakes_right)
     if(zero_area_dir[ret] < zero_area_dir['up']):
         ret = 'up'
     if(zero_area_dir[ret] < zero_area_dir['down']):
@@ -203,13 +213,11 @@ create a function with parameter (start, arena_snakes) and return the number of 
 connectivity of a pair of entris means that there must be at least a path between this pair where all values on it are 0's
 """
 
-def zero_area(start_y,start_x, arena_snakes):
-    if(arena_snakes[start_y][start_x] > 0):
+def zero_area(start_y,start_x, new_arena_snakes):
+    if(new_arena_snakes[start_y][start_x] > 0):
         return 0
-    size = len(arena_snakes)
-    new_arena_snakes = []
-    for i in range(0,size):
-        new_arena_snakes.append(arena_snakes[i])
+    size = len(new_arena_snakes)
+
     #new_arena_snakes[start_y][start_x] = 1
     ret = 0
     cont = [[start_y,start_x]]
