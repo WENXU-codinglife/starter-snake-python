@@ -111,11 +111,16 @@ def dec_v2(data):
     new_arena_snakes_down = []
     new_arena_snakes_left = []
     new_arena_snakes_right = []
-    for i in range(0,height):
-        new_arena_snakes_up.append(arena['snakes'][i])
-        new_arena_snakes_down.append(arena['snakes'][i])
-        new_arena_snakes_left.append(arena['snakes'][i])
-        new_arena_snakes_right.append(arena['snakes'][i])
+    for i in range(0,height+2):
+        new_arena_snakes_up.append([])
+        new_arena_snakes_down.append([])
+        new_arena_snakes_left.append([])
+        new_arena_snakes_right.append([])      
+        for j in range(0,width+2):
+            new_arena_snakes_up[i].append(arena['snakes'][i][j])
+            new_arena_snakes_down[i].append(arena['snakes'][i][j])
+            new_arena_snakes_left[i].append(arena['snakes'][i][j])
+            new_arena_snakes_right[i].append(arena['snakes'][i][j])
 
     if dic_dir['up'] > 0:
         zero_area_dir['up'] = zero_area(first['y'],first['x']+1,new_arena_snakes_up)
@@ -236,15 +241,4 @@ def zero_area(start_y,start_x, new_arena_snakes):
             if((entry[0] > 0 and entry[0] < size-1 and entry[1]>0 and entry[1]<size-1) and new_arena_snakes[entry[0]][entry[1]-1] <= 0):
                 cont.append([entry[0],entry[1]-1])
             count += 1
-        
     return ret
-    """
-    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y+1][start_x] <= 0):
-        ret = ret + zero_area(start_x,start_y+1,new_arena_snakes)
-    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y-1][start_x] <= 0):
-        ret = ret + zero_area(start_x,start_y-1,new_arena_snakes)
-    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y][start_x+1] <= 0):
-        ret = ret + zero_area(start_x+1,start_y,new_arena_snakes)
-    if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y][start_x-1] <= 0):
-        ret = ret + zero_area(start_x-1,start_y,new_arena_snakes)   
-    """
