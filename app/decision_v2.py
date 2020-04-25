@@ -203,16 +203,34 @@ create a function with parameter (start, arena_snakes) and return the number of 
 connectivity of a pair of entris means that there must be at least a path between this pair where all values on it are 0's
 """
 
-def zero_area(start_x,start_y, arena_snakes):
+def zero_area(start_y,start_x, arena_snakes):
     if(arena_snakes[start_y][start_x] > 0):
         return 0
     size = len(arena_snakes)
-    new_arena_snakes = [[None]] * size
-    for x in range(0,size):
-        for y in range(0,size):
-            new_arena_snakes[x].append(arena_snakes[x][y])
-    new_arena_snakes[start_y][start_x] = 1
-    ret = 1
+    new_arena_snakes = []
+    for i in range(0,size):
+        new_arena_snakes.append(arena_snakes[i])
+    #new_arena_snakes[start_y][start_x] = 1
+    ret = 0
+    cont = [[start_y,start_x]]
+    count = 0
+    while(len(cont) > 0 and count < 1000):
+        entry = cont.pop(0)
+        if(new_arena_snakes[entry[0]][entry[1]] < 1):
+            ret += 1
+            new_arena_snakes[entry[0]][entry[1]] = 1
+            if((entry[0] > 0 and entry[0] < size-1 and entry[1]>0 and entry[1]<size-1) and new_arena_snakes[entry[0]+1][entry[1]] <= 0):
+                cont.append([entry[0]+1,entry[1]])
+            if((entry[0] > 0 and entry[0] < size-1 and entry[1]>0 and entry[1]<size-1) and new_arena_snakes[entry[0]-1][entry[1]] <= 0):
+                cont.append([entry[0]-1,entry[1]])
+            if((entry[0] > 0 and entry[0] < size-1 and entry[1]>0 and entry[1]<size-1) and new_arena_snakes[entry[0]][entry[1]+1] <= 0):
+                cont.append([entry[0],entry[1]+1])
+            if((entry[0] > 0 and entry[0] < size-1 and entry[1]>0 and entry[1]<size-1) and new_arena_snakes[entry[0]][entry[1]-1] <= 0):
+                cont.append([entry[0],entry[1]-1])
+            count += 1
+        
+    return ret
+    """
     if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y+1][start_x] <= 0):
         ret = ret + zero_area(start_x,start_y+1,new_arena_snakes)
     if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y-1][start_x] <= 0):
@@ -221,5 +239,4 @@ def zero_area(start_x,start_y, arena_snakes):
         ret = ret + zero_area(start_x+1,start_y,new_arena_snakes)
     if((start_x > 0 and start_x < size-1 and start_y>0 and start_y<size-1) and new_arena_snakes[start_y][start_x-1] <= 0):
         ret = ret + zero_area(start_x-1,start_y,new_arena_snakes)   
-
-    return ret
+    """
