@@ -108,13 +108,13 @@ def dec_v2(data):
         if dic_dir[ret] < dic_dir[way]:
             ret = way
     if dic_dir['up'] > 0:
-        zero_area_dir['up'] = zero_area(first['x']+1,first['y'],arena['snakes'])
+        zero_area_dir['up'] = zero_area(first['y'],first['x']+1,arena['snakes'])
     if dic_dir['down'] > 0:
-        zero_area_dir['down'] = zero_area(first['x']+1,first['y']+2,arena['snakes'])
+        zero_area_dir['down'] = zero_area(first['y']+2,first['x']+1,arena['snakes'])
     if dic_dir['left'] > 0:
-        zero_area_dir['left'] = zero_area(first['x'],first['y']+1,arena['snakes'])
+        zero_area_dir['left'] = zero_area(first['y']+1,first['x'],arena['snakes'])
     if dic_dir['right'] > 0:
-        zero_area_dir['right'] = zero_area(first['x']+2,first['y']+1,arena['snakes'])
+        zero_area_dir['right'] = zero_area(first['y']+1,first['x']+2,arena['snakes'])
     if(zero_area_dir[ret] < zero_area_dir['up']):
         ret = 'up'
     if(zero_area_dir[ret] < zero_area_dir['down']):
